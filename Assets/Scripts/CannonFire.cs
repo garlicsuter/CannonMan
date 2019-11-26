@@ -16,7 +16,7 @@ public class CannonFire : MonoBehaviour
 
     public float speed { get; set; }
 
-    public Text sliderValue;
+    //public Text sliderValue;
     public Slider slider;
 
    
@@ -30,7 +30,7 @@ public class CannonFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sliderValue.text = slider.value.ToString("0.0");
+        //sliderValue.text = slider.value.ToString("0.0");
 
         if (Input.GetKeyDown("b"))
         {
