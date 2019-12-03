@@ -14,12 +14,12 @@ public class CannonFire : MonoBehaviour
     private Rigidbody cannonballRb;
     //public float speed = 100.0f;
 
-    public float speed { get; set; }
+    
 
     //public Text sliderValue;
     public Slider slider;
 
-   
+    public float speed { get; set; }
     // Start is called before the first frame update
     void Start()
     {
