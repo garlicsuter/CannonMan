@@ -5,12 +5,12 @@ using TMPro;
 public class setTextScript : MonoBehaviour
 {
 
-    TextMeshPro speedText2;
+    public TextMeshProUGUI speedText2;
     public Slider speedSlider;
 
     void Start()
     {
-        speedText2 = GetComponent<TextMeshPro>();
+        speedText2 = GetComponent<TextMeshProUGUI>();
     }
 
     public void SetSliderValue()
