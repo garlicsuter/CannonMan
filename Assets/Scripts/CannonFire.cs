@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CannonFire : MonoBehaviour
 {
@@ -12,34 +13,31 @@ public class CannonFire : MonoBehaviour
     private Vector3 cannonAngle;
     private Vector3 ballAngle;
     private Rigidbody cannonballRb;
-    //public float speed = 100.0f;
+    public float speed = 50.0f;
 
-    
-
-    //public Text sliderValue;
+    public TextMeshProUGUI sliderValue;
     public Slider slider;
 
-    public float speed { get; set; }
-    // Start is called before the first frame update
-    void Start()
+    //public float speed { get; set; }
+
+    public void OnValueChanged(float newValue)
     {
-        
-        
+        speed = newValue;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //sliderValue.text = slider.value.ToString("0.0");
+        sliderValue.text = slider.value.ToString("0.0");
 
-        if (Input.GetKeyDown("b"))
-        {
+        //if (Input.GetKeyDown("b"))
+        //{
 
             //Instantiate(cannonBall, new Vector3(1,1,-42), transform.rotation);
             
             
             
-        }
+        //}
 
         if (Input.GetKeyDown("space"))
         {
@@ -53,8 +51,7 @@ public class CannonFire : MonoBehaviour
             
 
             cannonBallSpawn.GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Impulse);
-
-
+            Debug.Log("Speed: " + speed);
             Debug.Log("cannonAngle: " + cannonAngle);
             //Debug.Log("velocity of cannonBall: " + cannonballRb.velocity);
             Debug.Log("cannonball position: " + cannonBall.transform.position);
