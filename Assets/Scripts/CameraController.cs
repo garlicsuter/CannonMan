@@ -8,6 +8,8 @@ public class CameraController : MonoBehaviour
     public GameObject cannonBall;
     private Vector3 offsetCannon;
     private Vector3 offsetCannonBall;
+    public bool ballActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,12 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         transform.position = cannon.transform.position + offsetCannon;
+        if (ballActive)
+        {
+            transform.position = cannonBall.transform.position + offsetCannonBall;
+            Debug.Log("in the if, ballActive: " + ballActive);
+        }
+
+        Debug.Log("ballActive: " + ballActive);
     }
 }

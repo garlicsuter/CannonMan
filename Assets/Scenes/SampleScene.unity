@@ -477,6 +477,7 @@ MonoBehaviour:
   spawnPointObj: {fileID: 0}
   spawnPoint: {x: 0, y: 0, z: 0}
   speed: 100
+  theCamera: {fileID: 0}
   sliderValue: {fileID: 0}
   slider: {fileID: 0}
 --- !u!54 &614902037
@@ -938,6 +939,7 @@ MonoBehaviour:
   cannon: {fileID: 8296172668464443524}
   cannonBall: {fileID: 7389944600652782728, guid: 2861a1cafe1dcab438ad3374859753ba,
     type: 3}
+  ballActive: 0
 --- !u!1 &1166122554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,6 +1735,7 @@ MonoBehaviour:
   spawnPointObj: {fileID: 136910248}
   spawnPoint: {x: 0, y: 0, z: 0}
   speed: 100
+  theCamera: {fileID: 963194225}
   sliderValue: {fileID: 268269336}
   slider: {fileID: 1295064609}
 --- !u!1 &9050030205248302684 stripped

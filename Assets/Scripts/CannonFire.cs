@@ -14,11 +14,20 @@ public class CannonFire : MonoBehaviour
     private Vector3 ballAngle;
     private Rigidbody cannonballRb;
     public float speed = 50.0f;
+    public GameObject theCamera;
+
+    private CameraController cc;
 
     public TextMeshProUGUI sliderValue;
     public Slider slider;
 
     //public float speed { get; set; }
+
+    private void Start()
+    {
+        cc = theCamera.GetComponent<CameraController>();
+        cc.ballActive = false;
+    }
 
     public void OnValueChanged(float newValue)
     {
@@ -29,7 +38,7 @@ public class CannonFire : MonoBehaviour
     void Update()
     {
         sliderValue.text = slider.value.ToString("0.0");
-
+        
         //if (Input.GetKeyDown("b"))
         //{
 
@@ -41,6 +50,7 @@ public class CannonFire : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
+            cc.ballActive = true;
             //Testing spawn & shoot from off to the side of the cannon
             //GameObject cannonBallSpawn = Instantiate(cannonBall, new Vector3(1, 1, -42), cannonBall.transform.rotation) as GameObject;
             spawnPoint = spawnPointObj.transform.position;
@@ -62,9 +72,14 @@ public class CannonFire : MonoBehaviour
 
     private void LateUpdate()
     {
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (!cc.ballActive)
+        {
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            cannon.transform.rotation = Quaternion.LookRotation(ray.direction, Vector3.up);
+        }
+        
 
-        cannon.transform.rotation = Quaternion.LookRotation(ray.direction, Vector3.up);
+        
     }
 
     
