@@ -9,6 +9,8 @@ public class CameraController : MonoBehaviour
     private Vector3 offsetCannon;
     private Vector3 offsetCannonBall;
     public bool ballActive = false;
+    public CannonFire cf;
+    public Vector3 cbPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +23,11 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         transform.position = cannon.transform.position + offsetCannon;
-        if (ballActive)
+        if (GameObject.FindGameObjectsWithTag("cannonball").Length <=1)
         {
-            transform.position = cannonBall.transform.position + offsetCannonBall;
+            //Fix This!
+            //cbPosition = cf.cannonBallSpawn.transform.position;
+            transform.position = cbPosition + offsetCannonBall;
             Debug.Log("in the if, ballActive: " + ballActive);
         }
 

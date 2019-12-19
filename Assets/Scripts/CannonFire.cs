@@ -50,22 +50,26 @@ public class CannonFire : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            cc.ballActive = true;
-            //Testing spawn & shoot from off to the side of the cannon
-            //GameObject cannonBallSpawn = Instantiate(cannonBall, new Vector3(1, 1, -42), cannonBall.transform.rotation) as GameObject;
-            spawnPoint = spawnPointObj.transform.position;
-            GameObject cannonBallSpawn = Instantiate(cannonBall, spawnPoint, cannon.transform.rotation) as GameObject;
+            if(GameObject.FindGameObjectsWithTag("cannonball").Length <=1)
+            {
+                cc.ballActive = true;
+                //Testing spawn & shoot from off to the side of the cannon
+                //GameObject cannonBallSpawn = Instantiate(cannonBall, new Vector3(1, 1, -42), cannonBall.transform.rotation) as GameObject;
+                spawnPoint = spawnPointObj.transform.position;
+                GameObject cannonBallSpawn = Instantiate(cannonBall, spawnPoint, cannon.transform.rotation) as GameObject;
 
-            //cannonBallSpawn.transform.eulerAngles = (cannon.transform.forward);
-            //cannonBall.transform.eulerAngles = cannonAngle;
+                //cannonBallSpawn.transform.eulerAngles = (cannon.transform.forward);
+                //cannonBall.transform.eulerAngles = cannonAngle;
+
+
+                cannonBallSpawn.GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Impulse);
+                Debug.Log("Speed: " + speed);
+                Debug.Log("cannonAngle: " + cannonAngle);
+                //Debug.Log("velocity of cannonBall: " + cannonballRb.velocity);
+                Debug.Log("cannonball position: " + cannonBall.transform.position);
+                Debug.Log("this is cannonballRb: " + cannonballRb);
+            }
             
-
-            cannonBallSpawn.GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Impulse);
-            Debug.Log("Speed: " + speed);
-            Debug.Log("cannonAngle: " + cannonAngle);
-            //Debug.Log("velocity of cannonBall: " + cannonballRb.velocity);
-            Debug.Log("cannonball position: " + cannonBall.transform.position);
-            Debug.Log("this is cannonballRb: " + cannonballRb);
 
         }
     }
