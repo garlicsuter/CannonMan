@@ -599,30 +599,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon
       objectReference: {fileID: 0}
-    - target: {fileID: -7092354397167365030, guid: cfe48030306e25348a38facee051c2b9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9050030205867821009, guid: cfe48030306e25348a38facee051c2b9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175461206238988133, guid: cfe48030306e25348a38facee051c2b9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -8559276998384533221, guid: cfe48030306e25348a38facee051c2b9,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7092354397167365030, guid: cfe48030306e25348a38facee051c2b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cfe48030306e25348a38facee051c2b9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cfe48030306e25348a38facee051c2b9,
         type: 3}
@@ -679,11 +669,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1121063750183690423, guid: cfe48030306e25348a38facee051c2b9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 271668886282408653, guid: cfe48030306e25348a38facee051c2b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -698,6 +683,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.194
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121063750183690423, guid: cfe48030306e25348a38facee051c2b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050030205867821009, guid: cfe48030306e25348a38facee051c2b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175461206238988133, guid: cfe48030306e25348a38facee051c2b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfe48030306e25348a38facee051c2b9, type: 3}
@@ -940,6 +940,8 @@ MonoBehaviour:
   cannonBall: {fileID: 7389944600652782728, guid: 2861a1cafe1dcab438ad3374859753ba,
     type: 3}
   ballActive: 0
+  cf: {fileID: 0}
+  cbPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1166122554
 GameObject:
   m_ObjectHideFlags: 0
